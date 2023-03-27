@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "sass": "^1.58.3"
+  },
+  "name": "oc-integrateur-web-p4-ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 4 - ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./assets/style.css"
+  },
+  "author": "Puyo Josselin",
+  "license": "ISC"
+}
