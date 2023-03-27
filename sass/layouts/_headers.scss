@@ -1,0 +1,26 @@
+.header {
+    position: relative;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba($color-font-black, 0.15);
+    z-index: 1;
+
+        &__logo {
+            font-family: $font-logo;
+            font-size: map-get($font-size, logo-header);
+            text-align: center;
+            margin: 0;
+        }
+
+        &--restaurants {
+            position: relative;
+
+            .header__back {
+                font-size: map-get($font-size, heading);
+                color: $color-font-location;
+                position: absolute;
+                left: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+}

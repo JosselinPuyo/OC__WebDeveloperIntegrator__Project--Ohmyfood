@@ -1,0 +1,19 @@
+@mixin btn {
+    border: 0;
+    border-radius: 25px;
+    padding: map-get($padding, btn-homepage);
+    font-weight: nth($font-weight, 2);
+    font-size: map-get($font-size, text);
+    color: $color-font-white;
+    background: linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%);
+    box-shadow: map-get($box-shadow, btn);
+    cursor: pointer;
+    display: inline-block;
+    transition: all 450ms;
+    
+        &:hover {
+            background: linear-gradient(0deg, rgba($color-bg-white, 0.15), rgba($color-bg-white, 0.15)), linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%);
+            box-shadow: map-get($box-shadow, btn-hover);
+            transform: scale(1.1);
+        }
+}

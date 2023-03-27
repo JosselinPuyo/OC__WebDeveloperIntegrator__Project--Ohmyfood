@@ -1,0 +1,71 @@
+.footer {
+    background-color: $color-bg-footer;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+            align-items: center;
+        }
+        @media (min-width:map-get($breakpoints,desktop)) {
+            flex-direction: row-reverse;
+            align-items: center;
+            margin-right: 4.5rem;
+        }
+    }
+    
+        &__logo {
+            font-family: $font-logo;
+            font-size: map-get($font-size, logo-footer);
+            color: $color-font-white;
+            margin: 0;
+
+            @media (min-width:map-get($breakpoints,desktop)) {
+                margin-bottom: 0;
+            }  
+        }
+
+        &__menu {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+
+            @media (min-width:map-get($breakpoints,desktop)) {
+                display: flex;
+                margin-top: 0;
+            }
+            @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+                text-align: center;
+            }
+        }
+    
+            &__page {
+                margin: 0.5rem 0;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    @media (min-width:map-get($breakpoints,desktop)) {
+                        margin: 0 2.5rem 0 0;
+                        &:last-child {
+                            margin-right: 4rem;
+                        }
+                    }
+            }
+
+                &__link {
+                    color: $color-font-white;
+                    text-decoration: none;
+                
+                    .footer__icon {
+                        width: 0.75rem;
+                        margin-right: 1rem;
+
+                    }
+                }
+}

@@ -1,0 +1,16 @@
+@import "./base/_colors.scss";
+@import "./base/_fonts.scss";
+@import "./base/_bases.scss";
+
+@import "./utils/variables";
+@import "./utils/breakpoints";
+
+@import "./components/loader";
+@import "./components/buttons";
+@import "./components/icons";
+
+@import "./layouts/headers"; 
+@import "./layouts/footers"; 
+@import "./layouts/layouts.scss";
+
+@import "./pages/homepage"; 

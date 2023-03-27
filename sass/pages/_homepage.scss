@@ -1,0 +1,205 @@
+.location {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 1rem;
+    background-color: $color-bg-location;
+    font-size: map-get($font-size, text);
+    color: $color-font-location;
+    
+        &__icon {
+            margin: 0 1rem 0 1rem;
+        }
+
+        &__text {
+            margin: 0;
+            font-size: map-get($font-size, text);
+            font-weight: nth($font-weight, 2);
+            color: $color-font-location;
+
+                &:focus {
+                    outline: solid $color-primary;
+                }
+        }
+}
+
+
+.teaser {
+    padding: 2rem 2rem 3.5rem;
+    text-align: center;
+    background-color: $color-bg-grey;
+
+        &__title {
+            margin: 0;
+        }
+
+        &__subtitle {
+            margin: 1rem 0 2.5rem;
+            font-weight: nth($font-weight, 1);
+        }
+
+        &__button {
+            @include btn;
+        }
+}
+
+
+.functioning {
+    padding: 3rem 1rem 4rem;
+
+    .container { 
+        max-width: 1155px;
+    }
+
+    &__title {
+        margin-top: 0;
+    }
+
+    &__chronology {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: numbersStep;
+
+        @media (min-width:map-get($breakpoints,desktop)) {
+            display: flex;
+        }
+    }
+
+    &__step {
+        position: relative;
+        display: flex;
+        padding: 1.5rem;
+        margin: 1.5rem 0 0 0.75rem;
+        background-color: $color-bg-grey;
+        box-shadow: 0 0.25rem 0.9rem rgba($color-font-black, 0.15);
+        border-radius: 1.25rem;
+
+            &::before {
+                counter-increment: numbersStep 1;
+                content: counter(numbersStep) "";
+                background: $color-primary;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $color-font-white;
+                position: absolute;
+                left: -0.75rem;
+                top: 1.35rem;
+            }
+
+            &:hover {
+                background-color: $color-bg-hover;
+
+                    .functioning__icon {
+                        color: $color-primary;
+                    }
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media (min-width:map-get($breakpoints,desktop)) {
+                flex: 1;
+                margin: 0;
+                margin-left: 2rem;
+
+                    &:first-child {
+                        margin-left: 0.75rem;
+                    }
+            }
+    }
+
+    &__icon {
+        margin: 0 1rem;
+        color: $color-font-icon;
+    }
+}
+
+
+.restaurants {
+    background-color: $color-bg-grey;
+    padding: 3rem 1rem 4rem;
+
+        .container { 
+            max-width: 1155px;
+        }
+
+        &__title {
+            margin-top: 0;
+        }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+
+    @media (min-width:map-get($breakpoints,desktop)) {
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+    }
+
+        .card {
+            background-color: $color-bg-white;
+            border-radius: 1rem;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 0.25rem 0.9rem rgba($color-font-black, 0.15);
+
+                &__img {
+                    height: 12rem;
+                    width: 100%;
+                    border: transparent solid 0px;
+                    border-radius: 1rem 1rem 0 0;
+                    box-shadow: none;
+                    object-fit: cover;
+                }
+
+                &__new {
+                    background-color: $color-bg-new;
+                    box-shadow: 0 0.125rem 0.25rem rgba($color-font-black, 0.15);
+                    color: $color-font-new;
+                    padding: 0.5rem;
+                    border-radius: 0.125rem;
+                    position: absolute;
+                    top: 1rem;
+                    right: 0.85rem;
+                }
+
+                &__footer {
+                    padding: 1rem;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+
+                &__content {
+                    flex: 1;
+                }
+
+                &__title {
+                    margin: 0;
+                    margin-bottom: 0.3rem;
+                }
+
+                &__subtitle {
+                    margin: 0;
+                }
+
+                .icon__heart {
+                    @include icon__heart;
+                }   
+        }
+}

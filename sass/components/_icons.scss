@@ -1,0 +1,38 @@
+@mixin icon__heart {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+        &--inactive {
+            position: relative;
+            z-index: 1;
+            background: $color-bg-white;
+
+            &:hover {
+                z-index: -1;
+                display: none;
+            }
+        }
+
+        &--asset {
+            position: absolute;
+            z-index: 0;
+
+            &:hover {
+                z-index: 2;
+                transition: color 0.5s ease-out;
+                transform: scale(1.015);
+                background: linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-background-clip: text;
+                -moz-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+}
