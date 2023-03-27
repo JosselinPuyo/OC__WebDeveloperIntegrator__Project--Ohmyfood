@@ -1,0 +1,206 @@
+.restaurant__bg {
+    width: 100%;
+    max-width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+}
+
+
+.pages__restaurants {
+    @media (min-width:map-get($breakpoints,desktop)) {
+        display: flex;
+        justify-content: center;
+    }
+    @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.menu {
+    position: relative;
+    z-index: 1;
+    background-color: $color-bg-grey;
+    border-radius: 3rem 3rem 0 0;
+    margin-top: -4rem;
+
+    @media (min-width:map-get($breakpoints,desktop)) {
+        max-width: 62rem;
+        width: 100%;
+    }
+    @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+        max-width: 48rem;
+        width: 100%;
+    }
+
+        &__header {
+            padding: 1rem 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (min-width:map-get($breakpoints,desktop)) {
+                justify-content: center;
+            }
+            @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+                justify-content: center;
+            }
+        }
+
+        &__title {
+            font-family: $font-logo;
+            font-size: map-get($font-size, title-restaurant);
+
+            @media (min-width:map-get($breakpoints,desktop)) {
+                margin-right: 1.5rem;
+            }
+            @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+                margin-right: 1.5rem;
+            }
+        }
+
+        .icon__heart {
+            @include icon__heart;
+
+                &--inactive {
+                    background: $color-bg-grey;
+                }
+        }
+}
+
+
+.service {
+    display: grid;
+
+    @media (min-width:map-get($breakpoints,desktop)) {
+        justify-content: center;
+    }
+    @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+        justify-content: center;
+    }
+}
+
+
+.submenu {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+
+    @media (min-width:map-get($breakpoints,desktop)) {
+        width: 40rem;
+    }
+    @media (max-width:map-get($breakpoints,desktop)) and (min-width:map-get($breakpoints,tablet)) {
+        width: 35rem;
+    }
+
+        &__title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: nth($font-weight, 1);
+            font-size: map-get($font-size, text);
+            text-transform: uppercase;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 2.5rem;
+                    height: 0.25rem;
+                    background-color: $color-tertiary;
+                }
+        }
+}
+
+        .choice {
+            display: flex;
+            background-color: $color-bg-white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 0.25rem 0.9rem rgba($color-bg-black, 0.1);
+            max-width: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        
+                &__header {
+                    flex: 1;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                &__title {
+                    margin: 0 0 0.3rem 0;
+                    font-weight: nth($font-weight, 2);
+                    font-size: map-get($font-size, logo-footer);
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                &__text {
+                    margin: 0;
+                    font-weight: nth($font-weight, 1);
+                    font-size: map-get($font-size, text);
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+            &__price {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding-left: 0.3rem;
+                font-weight: nth($font-weight, 3);
+                font-size: map-get($font-size, text);
+            }
+
+            &__confirmation {
+                background-color: $color-tertiary;
+                margin: -1rem -5rem -1rem 1rem;
+                width: 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition-duration: 0.5s;
+                transition-duration: 0.5s;
+        }
+
+                &:hover &__confirmation {
+                    margin-right: -1rem;
+                }
+
+                &__animation {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $color-bg-white;
+                    border-radius: 100px;
+                    transform: rotate(180deg);
+                    transition-duration: 0.5s;
+                }
+
+                &:hover &__animation {
+                    transform: rotate(0);
+                }
+
+                &__icon {
+                    color: $color-tertiary;
+                }
+        }
+
+.wrap-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+    .pages__btn {
+        @include btn;
+        padding: map-get($padding, btn-pages);
+    }
